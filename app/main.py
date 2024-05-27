@@ -12,7 +12,7 @@ def main():
 
     # Wait for user input
     command = input()
-    print(os.environ)
+    print(os.environ['PATH'])
     while True:
         args = command.split()
         if args[0] == "exit":
