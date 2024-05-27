@@ -33,7 +33,7 @@ def main():
                         print(f"{executable}")
                         found=1
                 if not found:
-                    print("{} not found".format(args[0]))
+                    print("{} not found".format(args[1]))
         else:
             print("{}: command not found".format(command))
         sys.stdout.write("$ ")
