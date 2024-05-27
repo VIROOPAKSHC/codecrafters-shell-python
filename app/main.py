@@ -12,6 +12,7 @@ def main():
 
     # Wait for user input
     command = input()
+    print(sys.argv)
     while True:
         args = command.split()
         if args[0] == "exit":
