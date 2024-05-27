@@ -21,6 +21,14 @@ def main():
                 print("Provide exit code for exit.")
         elif args[0] == "echo":
             print(" ".join(args[1:]))
+        elif args[0] == "type":
+            if len(args) == 1:
+                print("type must provide a command.")
+            else:
+                if args[1] in ["echo","type","exit","cat"]:
+                    print("{} is a shell bulletin".format(args[1]))
+                else:
+                    print("{} not found".format(args[1]))
         else:
             print("{}: command not found".format(command))
         sys.stdout.write("$ ")
