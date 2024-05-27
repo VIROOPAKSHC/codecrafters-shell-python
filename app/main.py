@@ -38,10 +38,14 @@ def main():
                     if not found:
                         print("{} not found".format(args[1]))
         else:
+            location=""
+            for path in paths:
+                executable = os.path.join(path, args[1])
+                if os.path.isfile(executable) and os.access(executable, os.X_OK):
+                    location = executable
+                    
             try:
-                first = args[0]
-                args.pop(0)
-                with os.popen(f"{args[0]} {args}") as _exec:
+                with os.popen(f"{args[0]} {args[1]}") as _exec:
                     sys.stdout.write(_exec.read())
             except Exception as e:
                 sys.stdout.write(f"failed with error: {e}\n")
