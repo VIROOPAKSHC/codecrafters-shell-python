@@ -38,14 +38,6 @@ def main():
                     if not found:
                         print("{} not found".format(args[1]))
         else:
-            location=""
-            for path in paths:
-                executable = os.path.join(path, args[1])
-                if os.path.isfile(executable) and os.access(executable, os.X_OK):
-                    location = executable
-            # print(location)
-            # print(args)
-
             try:
                 first = args[0]
                 args.pop(0)
