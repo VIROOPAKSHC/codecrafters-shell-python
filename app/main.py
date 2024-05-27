@@ -47,8 +47,9 @@ def main():
             # print(args)
 
             try:
-                first,rest = args[0],args[1:]
-                with os.popen(f"{args[0]} {rest}") as _exec:
+                first = args[0]
+                args.pop(0)
+                with os.popen(f"{args[0]} {args}") as _exec:
                     sys.stdout.write(_exec.read())
             except Exception as e:
                 sys.stdout.write(f"failed with error: {e}\n")
