@@ -13,7 +13,13 @@ def main():
     # Wait for user input
     command = input()
     while True:
-        print("{}: command not found".format(command))
+        if command.split()[0] == "exit":
+            if command.split()[1] == "0":
+                sys.exit(0)
+            else:
+                print("Provide exit code for exit.")
+        else:
+            print("{}: command not found".format(command))
         sys.stdout.write("$ ")
         sys.stdout.flush()
         command = input()
