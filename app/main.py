@@ -46,7 +46,7 @@ def main():
             print(location)
             print(args)
             try:
-                with os.popen(f"{args[0]} {args[1:]}") as _exec:
+                with os.popen(f"{args[0]} {*args[1:]}") as _exec:
                     sys.stdout.write(_exec.read())
             except Exception as e:
                 sys.stdout.write(f"failed with error: {e}\n")
