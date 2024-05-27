@@ -29,7 +29,7 @@ def main():
                 found=0
                 for path in paths:
                     if args[1] in os.listdir(path):
-                        print(path+"\{}".format(args[1]))
+                        print(path+r"\{}".format(args[1]))
                         found=1
                 if not found:
                     print("{} not found".format(args[0]))
