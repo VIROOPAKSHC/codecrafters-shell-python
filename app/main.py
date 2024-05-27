@@ -1,5 +1,5 @@
 import sys
-
+import os
 
 def main():
     # You can use print statements as follows for debugging, they'll be visible when running tests.
@@ -12,7 +12,7 @@ def main():
 
     # Wait for user input
     command = input()
-    print(sys.argv)
+    print(os.environ)
     while True:
         args = command.split()
         if args[0] == "exit":
