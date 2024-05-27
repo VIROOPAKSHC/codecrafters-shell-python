@@ -26,7 +26,7 @@ def main():
                 print("type must provide a command.")
             else:
                 if args[1] in ["echo","type","exit","cat"]:
-                    print("{} is a shell bulletin".format(args[1]))
+                    print("{} is a shell builtin".format(args[1]))
                 else:
                     print("{} not found".format(args[1]))
         else:
