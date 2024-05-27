@@ -12,7 +12,7 @@ def main():
 
     # Wait for user input
     command = input()
-    print(os.environ['PATH'])
+    paths = os.environ["PATH"].split(":")
     while True:
         args = command.split()
         if args[0] == "exit":
@@ -26,10 +26,13 @@ def main():
             if len(args) == 1:
                 print("type must provide a command.")
             else:
-                if args[1] in ["echo","type","exit","cat"]:
-                    print("{} is a shell builtin".format(args[1]))
-                else:
-                    print("{} not found".format(args[1]))
+                found=0
+                for path in paths:
+                    if args[1] in os.listdir(path):
+                        print(path+"\{}".format(args[1]))
+                        found=1
+                if not found:
+                    print("{} not found".format(args[0]))
         else:
             print("{}: command not found".format(command))
         sys.stdout.write("$ ")
