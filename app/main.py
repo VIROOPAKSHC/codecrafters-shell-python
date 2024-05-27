@@ -39,7 +39,7 @@ def main():
                     if not found:
                         print("{} not found".format(args[1]))
         elif len(args)==1:
-            print("{} not found".format(args[0]))
+            print("{}: command not found".format(args[0]))
         else:
             location=""
             for path in paths:
