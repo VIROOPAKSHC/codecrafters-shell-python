@@ -43,10 +43,12 @@ def main():
                 executable = os.path.join(path, args[1])
                 if os.path.isfile(executable) and os.access(executable, os.X_OK):
                     location = executable
-            print(location)
-            print(args)
+            # print(location)
+            # print(args)
+
             try:
-                with os.popen(f"{args[0]} {*args[1:]}") as _exec:
+                first,rest = args[0],args[1:]
+                with os.popen(f"{args[0]} {rest}") as _exec:
                     sys.stdout.write(_exec.read())
             except Exception as e:
                 sys.stdout.write(f"failed with error: {e}\n")
