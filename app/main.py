@@ -13,11 +13,14 @@ def main():
     # Wait for user input
     command = input()
     while True:
-        if command.split()[0] == "exit":
-            if command.split()[1] == "0":
+        args = command.split()
+        if  args[0] == "exit":
+            if args[1] == "0":
                 sys.exit(0)
             else:
                 print("Provide exit code for exit.")
+        elif args[1] == "echo":
+            print(" ".join(args[1:]))
         else:
             print("{}: command not found".format(command))
         sys.stdout.write("$ ")
