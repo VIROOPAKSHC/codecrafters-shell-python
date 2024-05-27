@@ -28,7 +28,7 @@ def main():
             else:
                 found=0
                 for path in paths:
-                    executable = os.path.join(path, target_command)
+                    executable = os.path.join(path, args[1])
                     if os.path.isfile(executable) and os.access(executable, os.X_OK):
                         print(f"{executable}")
                         found=1
