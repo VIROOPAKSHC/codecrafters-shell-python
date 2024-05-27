@@ -14,6 +14,8 @@ def main():
     command = input()
     while True:
         print("{}: command not found".format(command))
+        sys.stdout.write("$ ")
+        sys.stdout.flush()
         command = input()
 
 
