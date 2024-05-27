@@ -28,8 +28,9 @@ def main():
             else:
                 found=0
                 for path in paths:
-                    if args[1] in os.listdir(path):
-                        print(path+r"\{}".format(args[1]))
+                    executable = os.path.join(path, target_command)
+                    if os.path.isfile(executable) and os.access(executable, os.X_OK):
+                        print(f"{executable}")
                         found=1
                 if not found:
                     print("{} not found".format(args[0]))
