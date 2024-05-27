@@ -28,15 +28,15 @@ def main():
             else:
                 if args[1] in ["echo","exit","type"]:
                     print(f"{args[1]} is a shell builtin")
-                    continue
-                found=0
-                for path in paths:
-                    executable = os.path.join(path, args[1])
-                    if os.path.isfile(executable) and os.access(executable, os.X_OK):
-                        print(f"{args[1]} is {executable}")
-                        found=1
-                if not found:
-                    print("{} not found".format(args[1]))
+                else:        
+                    found=0
+                    for path in paths:
+                        executable = os.path.join(path, args[1])
+                        if os.path.isfile(executable) and os.access(executable, os.X_OK):
+                            print(f"{args[1]} is {executable}")
+                            found=1
+                    if not found:
+                        print("{} not found".format(args[1]))
         else:
             print("{}: command not found".format(command))
         sys.stdout.write("$ ")
