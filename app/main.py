@@ -14,12 +14,12 @@ def main():
     command = input()
     while True:
         args = command.split()
-        if  args[0] == "exit":
+        if args[0] == "exit":
             if args[1] == "0":
                 sys.exit(0)
             else:
                 print("Provide exit code for exit.")
-        elif args[1] == "echo":
+        elif args[0] == "echo":
             print(" ".join(args[1:]))
         else:
             print("{}: command not found".format(command))
