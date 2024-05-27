@@ -43,6 +43,8 @@ def main():
                 executable = os.path.join(path, args[1])
                 if os.path.isfile(executable) and os.access(executable, os.X_OK):
                     location = executable
+            print(location)
+            print(args)
             try:
                 with os.popen(f"{location} {args[1:]}") as _exec:
                     sys.stdout.write(_exec.read())
