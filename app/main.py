@@ -12,7 +12,9 @@ def main():
 
     # Wait for user input
     command = input()
-    print("{}: command not found".format(command))
+    while True:
+        print("{}: command not found".format(command))
+        command = input()
 
 
 if __name__ == "__main__":
