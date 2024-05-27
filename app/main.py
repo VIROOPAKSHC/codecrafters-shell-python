@@ -35,6 +35,7 @@ def main():
                         if os.path.isfile(executable) and os.access(executable, os.X_OK):
                             print(f"{args[1]} is {executable}")
                             found=1
+                            break
                     if not found:
                         print("{} not found".format(args[1]))
         else:
