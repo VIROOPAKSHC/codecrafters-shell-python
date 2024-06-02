@@ -53,6 +53,7 @@ def main():
                 else:
                     print("/".join(dest)+": No such file or directory")
                     dest = []
+                    continue
                 dest.pop(0)
         elif len(args)==1:
             print("{}: command not found".format(args[0]))
