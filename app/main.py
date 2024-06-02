@@ -41,10 +41,14 @@ def main():
         elif args[0] == 'pwd':
             print(os.getcwd())
         elif args[0] == 'cd':
-            try:
-                os.chdir(args[1])
-            except:
-                print(args[1]+": No such file or directory")
+            dest = args[1]
+            if args[1] == '~':
+                os.chdir(os.environ["HOMEPATH"])
+            else:
+                try:
+                    os.chdir(args[1])
+                except:
+                    print(args[1]+": No such file or directory")
         elif len(args)==1:
             print("{}: command not found".format(args[0]))
         else:
