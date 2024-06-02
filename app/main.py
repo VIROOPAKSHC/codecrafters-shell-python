@@ -40,6 +40,17 @@ def main():
                         print("{} not found".format(args[1]))
         elif args[0] == 'pwd':
             print(os.getcwd())
+        elif args[0] == 'cd':
+            dest = args[1].split("/")
+            while dest:
+                if dest[0] == "..":
+                    os.chdir("..")
+                elif dest[0] in os.listdir():
+                    os.chdir(dest[0])
+                else:
+                    print("/".join(dest)+": No such file or directory")
+                    break
+                dest.pop(0)
         elif len(args)==1:
             print("{}: command not found".format(args[0]))
         else:
