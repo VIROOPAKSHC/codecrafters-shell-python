@@ -43,7 +43,8 @@ def main():
         elif args[0] == 'cd':
             dest = args[1]
             if args[1] == '~':
-                os.chdir(os.environ["HOMEPATH"])
+                loc = (os.environ["HOMEPATH"])
+                os.chdir(loc)
             else:
                 try:
                     os.chdir(args[1])
