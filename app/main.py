@@ -38,6 +38,8 @@ def main():
                             break
                     if not found:
                         print("{} not found".format(args[1]))
+        elif args[0] == 'pwd':
+            print(os.getcwd())
         elif len(args)==1:
             print("{}: command not found".format(args[0]))
         else:
