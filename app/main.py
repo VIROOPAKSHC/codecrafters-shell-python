@@ -41,7 +41,12 @@ def main():
         elif args[0] == 'pwd':
             print(os.getcwd())
         elif args[0] == 'cd':
-            dest = args[1].split("/")
+            try:
+                os.chdir(args[1])
+            except:
+                print(args[1]+": No such file or directory")
+            # dest = args[1].split("/")
+            dest = []
             while dest:
                 if len(dest)==1 and dest[0]=='':
                     break
