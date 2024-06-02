@@ -47,11 +47,12 @@ def main():
                     break
                 if dest[0] == "..":
                     os.chdir("..")
+                
                 elif dest[0] in os.listdir():
                     os.chdir(dest[0])
                 else:
                     print("/".join(dest)+": No such file or directory")
-                    break
+                    dest = []
                 dest.pop(0)
         elif len(args)==1:
             print("{}: command not found".format(args[0]))
