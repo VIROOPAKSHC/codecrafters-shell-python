@@ -46,20 +46,20 @@ def main():
             except:
                 print(args[1]+": No such file or directory")
             # dest = args[1].split("/")
-            dest = []
-            while dest:
-                if len(dest)==1 and dest[0]=='':
-                    break
-                if dest[0] == "..":
-                    os.chdir("..")
+            # dest = []
+            # while dest:
+            #     if len(dest)==1 and dest[0]=='':
+            #         break
+            #     if dest[0] == "..":
+            #         os.chdir("..")
                 
-                elif dest[0] in os.listdir():
-                    os.chdir(dest[0])
-                else:
-                    print("/".join(dest)+": No such file or directory")
-                    dest = []
-                    continue
-                dest.pop(0)
+            #     elif dest[0] in os.listdir():
+            #         os.chdir(dest[0])
+            #     else:
+            #         print("/".join(dest)+": No such file or directory")
+            #         dest = []
+            #         continue
+            #     dest.pop(0)
         elif len(args)==1:
             print("{}: command not found".format(args[0]))
         else:
