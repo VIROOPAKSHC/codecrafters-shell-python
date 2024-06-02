@@ -16,7 +16,7 @@ def main():
     while True:
         args = command.split()
         if args[0] == "exit":
-            if args[1] == "0":
+            if (len(args)==2) and args[1] == "0":
                 sys.exit(0)
             else:
                 print("Provide exit code for exit.")
@@ -43,6 +43,8 @@ def main():
         elif args[0] == 'cd':
             dest = args[1].split("/")
             while dest:
+                if len(dest)==1 and dest[0]=='':
+                    break
                 if dest[0] == "..":
                     os.chdir("..")
                 elif dest[0] in os.listdir():
